@@ -1,0 +1,511 @@
+{
+  "school_profile": {
+    "name": "राजकीय उच्च माध्यमिक विद्यालय, रोजड़ी",
+    "level": "उच्च माध्यमिक विद्यालय (कक्षा 1 से 12)",
+    "state": "राजस्थान",
+    "district": "जयपुर",
+    "block": "सांभर लेक",
+    "village": "रोजड़ी",
+    "revenue_village": "रोजड़ी",
+    "udise": "08121011201",
+    "nic_code": "218823",
+    "shift_type": "एकल पारी - ग्रीष्मकालीन (07:30 AM - 01:00 PM)",
+    "periods_count": 6,
+    "combine_primary": true
+  },
+  "teachers": [
+    {
+      "name": "MANJU JATAV",
+      "desig": "प्रधानाचार्य (Principal)",
+      "subjects": []
+    },
+    {
+      "name": "DEEWAN SINGH MEENA",
+      "desig": "उप-प्रधानाचार्य (Vice Principal)",
+      "subjects": [
+        "विज्ञान",
+        "इतिहास"
+      ]
+    },
+    {
+      "name": "JAYANTI SINGH",
+      "desig": "प्राध्यापक / व्याख्याता (Lecturer)",
+      "subjects": [
+        "हिन्दी",
+        "अनिवार्य हिन्दी",
+        "हिन्दी साहित्य"
+      ]
+    },
+    {
+      "name": "SHIMBHU SINGH",
+      "desig": "प्राध्यापक / व्याख्याता (Lecturer)",
+      "subjects": [
+        "सामाजिक विज्ञान",
+        "राजनीति विज्ञान"
+      ]
+    },
+    {
+      "name": "SUNITA",
+      "desig": "प्रतिनियुक्ति पर कार्यरत अध्यापक (Deputation)",
+      "subjects": [
+        "जीव विज्ञान",
+        "कृषि जीव विज्ञान"
+      ]
+    },
+    {
+      "name": "SANDEEP",
+      "desig": "विद्या संबल योजना कार्मिक (Vidya Sambalan)",
+      "subjects": [
+        "भौतिक विज्ञान"
+      ]
+    },
+    {
+      "name": "ALOK KUMAR SINGH",
+      "desig": "वरिष्ठ अध्यापक (Sr. Teacher - Gr II)",
+      "subjects": [
+        "विज्ञान",
+        "रसायन विज्ञान",
+        "कृषि रसायन"
+      ]
+    },
+    {
+      "name": "RAHUL KUMAR",
+      "desig": "प्रतिनियुक्ति पर कार्यरत अध्यापक (Deputation)",
+      "subjects": [
+        "अंग्रेजी",
+        "अनिवार्य अंग्रेजी"
+      ]
+    },
+    {
+      "name": "BHAGWAN SAHAI JAT",
+      "desig": "वरिष्ठ अध्यापक (Sr. Teacher - Gr II)",
+      "subjects": [
+        "तृतीय भाषा (संस्कृत)"
+      ]
+    },
+    {
+      "name": "ASHUTOSH SHARMA",
+      "desig": "प्रतिनियुक्ति पर कार्यरत अध्यापक (Deputation)",
+      "subjects": [
+        "गणित"
+      ]
+    },
+    {
+      "name": "VIJAY PRAKASH SHARMA",
+      "desig": "अध्यापक लेवल-2 (Teacher L-2)",
+      "subjects": [
+        "अंग्रेजी"
+      ]
+    },
+    {
+      "name": "VIJENDRA KUMAR JAIMINI",
+      "desig": "अध्यापक लेवल-2 (Teacher L-2)",
+      "subjects": [
+        "हिन्दी"
+      ]
+    },
+    {
+      "name": "KIRAN KUMARI",
+      "desig": "अध्यापक लेवल-2 (Teacher L-2)",
+      "subjects": [
+        "सामाजिक विज्ञान"
+      ]
+    },
+    {
+      "name": "LADU RAM",
+      "desig": "प्रतिनियुक्ति पर कार्यरत अध्यापक (Deputation)",
+      "subjects": [
+        "गणित",
+        "विज्ञान"
+      ]
+    },
+    {
+      "name": "RAJESH KUMAR KUMAWAT",
+      "desig": "पंचायत शिक्षक (Panchayat Shikshak)",
+      "subjects": [
+        "गणित",
+        "विज्ञान"
+      ]
+    },
+    {
+      "name": "MUKESH YADAV",
+      "desig": "बेसिक कम्प्यूटर अनुदेशक (Basic Computer Instructor)",
+      "subjects": [
+        "विज्ञान",
+        "कृषि विज्ञान"
+      ]
+    },
+    {
+      "name": "GANGA RAM DUKYA",
+      "desig": "अध्यापक लेवल-1 (Teacher L-1)",
+      "subjects": [
+        "गणित",
+        "पर्यावरण अध्ययन",
+        "कला/खेल"
+      ]
+    },
+    {
+      "name": "PRAMILA YADAV",
+      "desig": "अध्यापक लेवल-1 (Teacher L-1)",
+      "subjects": [
+        "हिन्दी",
+        "अंग्रेजी",
+        "पर्यावरण अध्ययन",
+        "गणित"
+      ]
+    },
+    {
+      "name": "USHA KUMARI",
+      "desig": "पंचायत शिक्षक (Panchayat Shikshak)",
+      "subjects": [
+        "गणित",
+        "अंग्रेजी",
+        "पर्यावरण अध्ययन",
+        "हिन्दी"
+      ]
+    }
+  ],
+  "schedules": {
+    "6": {
+      "कक्षा 1 से 3 (संयुक्त)": [
+        [
+          "गणित",
+          "GANGA RAM DUKYA"
+        ],
+        [
+          "हिन्दी",
+          "PRAMILA YADAV"
+        ],
+        [
+          "अंग्रेजी",
+          "USHA KUMARI"
+        ],
+        [
+          "पर्यावरण अध्ययन",
+          "GANGA RAM DUKYA"
+        ],
+        [
+          "कला/खेल",
+          "PRAMILA YADAV"
+        ],
+        [
+          "अभ्यास कार्य",
+          "USHA KUMARI"
+        ]
+      ],
+      "कक्षा 4-5 (संयुक्त)": [
+        [
+          "हिन्दी",
+          "PRAMILA YADAV"
+        ],
+        [
+          "गणित",
+          "USHA KUMARI"
+        ],
+        [
+          "अंग्रेजी",
+          "PRAMILA YADAV"
+        ],
+        [
+          "पर्यावरण अध्ययन",
+          "USHA KUMARI"
+        ],
+        [
+          "गणित",
+          "GANGA RAM DUKYA"
+        ],
+        [
+          "अभ्यास कार्य",
+          "GANGA RAM DUKYA"
+        ]
+      ],
+      "कक्षा 6": [
+        [
+          "हिन्दी",
+          "VIJENDRA KUMAR JAIMINI"
+        ],
+        [
+          "अंग्रेजी",
+          "VIJAY PRAKASH SHARMA"
+        ],
+        [
+          "विज्ञान",
+          "LADU RAM"
+        ],
+        [
+          "गणित",
+          "RAJESH KUMAR KUMAWAT"
+        ],
+        [
+          "सामाजिक विज्ञान",
+          "KIRAN KUMARI"
+        ],
+        [
+          "तृतीय भाषा (संस्कृत)",
+          "BHAGWAN SAHAI JAT"
+        ]
+      ],
+      "कक्षा 7": [
+        [
+          "अंग्रेजी",
+          "VIJAY PRAKASH SHARMA"
+        ],
+        [
+          "तृतीय भाषा (संस्कृत)",
+          "BHAGWAN SAHAI JAT"
+        ],
+        [
+          "विज्ञान",
+          "RAJESH KUMAR KUMAWAT"
+        ],
+        [
+          "सामाजिक विज्ञान",
+          "KIRAN KUMARI"
+        ],
+        [
+          "गणित",
+          "RAJESH KUMAR KUMAWAT"
+        ],
+        [
+          "हिन्दी",
+          "VIJENDRA KUMAR JAIMINI"
+        ]
+      ],
+      "कक्षा 8": [
+        [
+          "गणित",
+          "LADU RAM"
+        ],
+        [
+          "हिन्दी",
+          "VIJENDRA KUMAR JAIMINI"
+        ],
+        [
+          "तृतीय भाषा (संस्कृत)",
+          "BHAGWAN SAHAI JAT"
+        ],
+        [
+          "विज्ञान",
+          "LADU RAM"
+        ],
+        [
+          "अंग्रेजी",
+          "VIJAY PRAKASH SHARMA"
+        ],
+        [
+          "सामाजिक विज्ञान",
+          "KIRAN KUMARI"
+        ]
+      ],
+      "कक्षा 9": [
+        [
+          "गणित",
+          "ASHUTOSH SHARMA"
+        ],
+        [
+          "विज्ञान",
+          "DEEWAN SINGH MEENA"
+        ],
+        [
+          "हिन्दी",
+          "VIJENDRA KUMAR JAIMINI"
+        ],
+        [
+          "तृतीय भाषा (संस्कृत)",
+          "BHAGWAN SAHAI JAT"
+        ],
+        [
+          "सामाजिक विज्ञान",
+          "SHIMBHU SINGH"
+        ],
+        [
+          "अंग्रेजी",
+          "RAHUL KUMAR"
+        ]
+      ],
+      "कक्षा 10": [
+        [
+          "सामाजिक विज्ञान",
+          "SHIMBHU SINGH"
+        ],
+        [
+          "विज्ञान",
+          "ALOK KUMAR SINGH"
+        ],
+        [
+          "गणित",
+          "ASHUTOSH SHARMA"
+        ],
+        [
+          "अंग्रेजी",
+          "RAHUL KUMAR"
+        ],
+        [
+          "तृतीय भाषा (संस्कृत)",
+          "BHAGWAN SAHAI JAT"
+        ],
+        [
+          "हिन्दी",
+          "JAYANTI SINGH"
+        ]
+      ],
+      "कक्षा 11 (Arts)": [
+        [
+          "अनिवार्य हिन्दी",
+          "JAYANTI SINGH"
+        ],
+        [
+          "अनिवार्य अंग्रेजी",
+          "RAHUL KUMAR"
+        ],
+        [
+          "राजनीति विज्ञान",
+          "SHIMBHU SINGH"
+        ],
+        [
+          "इतिहास",
+          "DEEWAN SINGH MEENA"
+        ],
+        [
+          "हिन्दी साहित्य",
+          "JAYANTI SINGH"
+        ],
+        [
+          "पुस्तकालय / उपचारात्मक",
+          "-- (रिक्त / कोई नहीं)"
+        ]
+      ],
+      "कक्षा 11 (Science)": [
+        [
+          "अनिवार्य हिन्दी",
+          "JAYANTI SINGH"
+        ],
+        [
+          "अनिवार्य अंग्रेजी",
+          "RAHUL KUMAR"
+        ],
+        [
+          "जीव विज्ञान",
+          "SUNITA"
+        ],
+        [
+          "रसायन विज्ञान",
+          "ALOK KUMAR SINGH"
+        ],
+        [
+          "भौतिक विज्ञान",
+          "SANDEEP"
+        ],
+        [
+          "प्रायोगिक कार्य",
+          "आवश्यकतानुसार (व्यवस्था)"
+        ]
+      ],
+      "कक्षा 11 (Agriculture)": [
+        [
+          "अनिवार्य हिन्दी",
+          "JAYANTI SINGH"
+        ],
+        [
+          "अनिवार्य अंग्रेजी",
+          "RAHUL KUMAR"
+        ],
+        [
+          "कृषि विज्ञान",
+          "MUKESH YADAV"
+        ],
+        [
+          "प्रायोगिक कार्य",
+          "आवश्यकतानुसार (व्यवस्था)"
+        ],
+        [
+          "कृषि रसायन",
+          "ALOK KUMAR SINGH"
+        ],
+        [
+          "कृषि जीव विज्ञान",
+          "SUNITA"
+        ]
+      ],
+      "कक्षा 12 (Arts)": [
+        [
+          "अनिवार्य अंग्रेजी",
+          "RAHUL KUMAR"
+        ],
+        [
+          "अनिवार्य हिन्दी",
+          "JAYANTI SINGH"
+        ],
+        [
+          "इतिहास",
+          "DEEWAN SINGH MEENA"
+        ],
+        [
+          "हिन्दी साहित्य",
+          "JAYANTI SINGH"
+        ],
+        [
+          "कला/खेल",
+          "आवश्यकतानुसार (व्यवस्था)"
+        ],
+        [
+          "राजनीति विज्ञान",
+          "SHIMBHU SINGH"
+        ]
+      ],
+      "कक्षा 12 (Science)": [
+        [
+          "अनिवार्य अंग्रेजी",
+          "RAHUL KUMAR"
+        ],
+        [
+          "अनिवार्य हिन्दी",
+          "JAYANTI SINGH"
+        ],
+        [
+          "भौतिक विज्ञान",
+          "SANDEEP"
+        ],
+        [
+          "प्रायोगिक कार्य",
+          "आवश्यकतानुसार (व्यवस्था)"
+        ],
+        [
+          "जीव विज्ञान",
+          "SUNITA"
+        ],
+        [
+          "रसायन विज्ञान",
+          "ALOK KUMAR SINGH"
+        ]
+      ],
+      "कक्षा 12 (Agriculture)": [
+        [
+          "अनिवार्य अंग्रेजी",
+          "RAHUL KUMAR"
+        ],
+        [
+          "अनिवार्य हिन्दी",
+          "JAYANTI SINGH"
+        ],
+        [
+          "कृषि रसायन",
+          "ALOK KUMAR SINGH"
+        ],
+        [
+          "कृषि जीव विज्ञान",
+          "SUNITA"
+        ],
+        [
+          "कृषि विज्ञान",
+          "MUKESH YADAV"
+        ],
+        [
+          "प्रायोगिक कार्य",
+          "आवश्यकतानुसार (व्यवस्था)"
+        ]
+      ]
+    },
+    "8": {}
+  }
+}
