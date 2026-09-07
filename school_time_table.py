@@ -2,14 +2,124 @@ import streamlit as st
 import json
 import os
 import base64
-from datetime import datetime, timedelta
+from datetime import datetime, time as dt_time, timedelta
 import streamlit.components.v1 as components
+import time
+import razorpay
 
 st.set_page_config(
-    page_title="शाला समय-सारणी प्रो पोर्टल",
+    page_title="शाला समय-सारणी प्रो...",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# -------------------------------------------------------------
+# Razorpay पेमेंट लिंक एकीकरण (ऑटो-रीडायरेक्ट एवं ऑटो-अनलॉक सहित)
+# -------------------------------------------------------------
+RAZORPAY_KEY_ID = "rzp_live_TZB3BuUjGteUpV"
+RAZORPAY_KEY_SECRET = "ddFL0oUJSpZX8KYZXMxgPC43"
+ENTRY_FEE_INR = 10
+PORTAL_LIVE_URL = "https://shala-timetable-app-by-alok-kumar-singh.streamlit.app"
+
+client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
+
+if "is_paid" not in st.session_state:
+    st.session_state.is_paid = False
+if "plink_id" not in st.session_state:
+    st.session_state.plink_id = None
+if "plink_url" not in st.session_state:
+    st.session_state.plink_url = None
+
+# 1. ऑटो-रीडायरेक्ट से आने वाले URL पैरामीटर्स की स्वचालित जांच
+query_params = st.query_params
+if not st.session_state.is_paid:
+    # यदि यूज़र पेमेंट के बाद Razorpay द्वारा इसी पेज पर ऑटो-रीडायरेक्ट होकर आया है
+    if "razorpay_payment_link_status" in query_params:
+        pl_status = query_params.get("razorpay_payment_link_status")
+        if pl_status == "paid":
+            st.session_state.is_paid = True
+            st.query_params.clear()
+            st.rerun()
+    elif "razorpay_payment_id" in query_params:
+        st.session_state.is_paid = True
+        st.query_params.clear()
+        st.rerun()
+
+if not st.session_state.is_paid:
+    st.markdown(
+        """
+        <div style="text-align: center; background: #f8fafc; border: 2px solid #1e3a8a; border-radius: 12px; padding: 25px; max-width: 520px; margin: 30px auto;">
+            <h2 style="color: #1e3a8a; margin-bottom: 8px;">🔒 शाला समय-सारणी प्रो पोर्टल</h2>
+            <p style="color: #475569; font-size: 15px;">पोर्टल का उपयोग करने के लिए <b>₹10</b> का शुल्क आवश्यक है।</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # नया पेमेंट लिंक बनाना (Callback URL के साथ ताकि अपने आप वापस आ सके)
+    if not st.session_state.plink_id:
+        try:
+            link_payload = {
+                "amount": ENTRY_FEE_INR * 100,  # 1000 पैसे = ₹10
+                "currency": "INR",
+                "description": "Shala TimeTable Pro Access Fee",
+                "callback_url": PORTAL_LIVE_URL,
+                "callback_method": "get",
+                "notify": {"sms": False, "email": False},
+                "reminder_enable": False
+            }
+            plink = client.payment_link.create(link_payload)
+            st.session_state.plink_id = plink.get("id")
+            st.session_state.plink_url = plink.get("short_url")
+        except Exception as e:
+            st.error(f"पेमेंट गेटवे से जुड़ने में समस्या: {e}")
+            st.stop()
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.session_state.plink_url:
+            st.markdown(
+                f"""
+                <div style="text-align: center; margin: 15px 0;">
+                    <a href="{st.session_state.plink_url}" target="_blank" style="background-color: #2563eb; color: white; padding: 14px 28px; font-size: 16px; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-block; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                        👉 ₹10 का भुगतान करें (UPI / QR / कार्ड)
+                    </a>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            status_placeholder = st.empty()
+            status_placeholder.info("⚡ भुगतान पूरा होते ही यह पोर्टल अपने आप अनलॉक हो जाएगा...")
+
+            # स्वचालित बैकग्राउंड सत्यापन (यदि यूज़र पुराने टैब पर ही खुला छोड़ दे)
+            try:
+                check_link = client.payment_link.fetch(st.session_state.plink_id)
+                if check_link.get("status") == "paid":
+                    st.session_state.is_paid = True
+                    status_placeholder.success("✅ भुगतान सफल! पोर्टल खुल रहा है...")
+                    time.sleep(1)
+                    st.rerun()
+            except Exception:
+                pass
+
+            # बैकअप बटन (यदि किसी नेटवर्क समस्या से ऑटो-रीडायरेक्ट न चले)
+            if st.button("🔄 स्थिति सत्यापित करें (यदि स्वतः न खुले)", use_container_width=True):
+                try:
+                    check_link = client.payment_link.fetch(st.session_state.plink_id)
+                    if check_link.get("status") == "paid":
+                        st.session_state.is_paid = True
+                        st.success("✅ भुगतान सत्यापित हो गया! पोर्टल अनलॉक हो रहा है...")
+                        time.sleep(1)
+                        st.rerun()
+                    else:
+                        st.warning("⚠️ भुगतान अभी प्राप्त नहीं हुआ है। कृपया भुगतान पूरा करने के बाद पुनः क्लिक करें।")
+                except Exception as err:
+                    st.error(f"सत्यापन में त्रुटि: {err}")
+
+    # ऑटो-रिफ्रेश पोलर: हर 4 सेकंड में स्थिति चेक करेगा ताकि बिना क्लिक किए भी पेज अनलॉक हो जाए
+    time.sleep(4)
+    st.rerun()
 
 # -------------------------------------------------------------
 # 1. UI एवं तिरंगा स्टाइलिंग
