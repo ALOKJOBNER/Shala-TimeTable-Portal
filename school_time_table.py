@@ -6,7 +6,7 @@ from datetime import datetime, time as dt_time, timedelta
 import streamlit.components.v1 as components
 import time
 import razorpay
-
+import config
 st.set_page_config(
     page_title="शाला समय-सारणी प्रो...",
     layout="wide",
@@ -16,8 +16,8 @@ st.set_page_config(
 # -------------------------------------------------------------
 # Razorpay पेमेंट लिंक एकीकरण (ऑटो-रीडायरेक्ट एवं ऑटो-अनलॉक सहित)
 # -------------------------------------------------------------
-RAZORPAY_KEY_ID = "rzp_live_TZB3BuUjGteUpV"
-RAZORPAY_KEY_SECRET = "ddFL0oUJSpZX8KYZXMxgPC43"
+RAZORPAY_KEY_ID = config.RAZORPAY_KEY_ID
+RAZORPAY_KEY_SECRET = config.RAZORPAY_KEY_ID
 ENTRY_FEE_INR = 10
 PORTAL_LIVE_URL = "https://shala-timetable-app-by-alok-kumar-singh.streamlit.app"
 
